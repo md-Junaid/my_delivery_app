@@ -1,12 +1,51 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BottomNavigation, Text, useTheme } from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
+import CategoriesScreen from './screens/CategoriesScreen';
+import CategoryStack from './components/CategoryStack';
+
+const AiRoute = () => <Text>Ai</Text>;
+
+const MapRoute = () => <Text>Map</Text>;
+
+const CartRoute = () => <Text>Cart</Text>;
+
+const UserRoute = () => <Text>User</Text>;
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+  const [index, setIndex] = useState(0);
+  const [routes] = useState([
+    { key: 'categories', title: 'Categories', focusedIcon: 'store-search', unfocusedIcon: 'store-search-outline'},
+    { key: 'ai', title: 'chatGPT', focusedIcon: 'robot-excited', unfocusedIcon: 'robot-happy-outline' },
+    { key: 'map', title: 'Map', focusedIcon: 'map-search', unfocusedIcon: 'map-search-outline' },
+    { key: 'cart', title: 'Cart', focusedIcon: 'cart', unfocusedIcon: 'cart-outline' },
+    { key: 'user', title: 'User', focusedIcon: 'account', unfocusedIcon: 'account-outline' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    categories: CategoryStack,
+    ai: AiRoute,
+    map: MapRoute,
+    cart: CartRoute,
+    user: UserRoute,
+  });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <PaperProvider>
       <StatusBar style="auto" />
-    </View>
+      <NavigationContainer theme={useTheme()}>
+        <BottomNavigation
+          navigationState={{ index, routes }}
+          onIndexChange={setIndex}
+          renderScene={renderScene}
+        />
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
