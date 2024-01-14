@@ -49,6 +49,5 @@ const styles = StyleSheet.create({
   searchbar: {
     backgroundColor: "white",
     margin: 10,
-    marginTop: 30,
   }
 })

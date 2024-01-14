@@ -6,7 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BottomNavigation, Text, useTheme } from 'react-native-paper';
 import { Provider as PaperProvider } from 'react-native-paper';
 import CategoriesScreen from './screens/CategoriesScreen';
-import CategoryStack from './components/CategoryStack';
+import CategoryStack from './pages/CategoryStack';
+import AiPage from './pages/AiPage';
 
 const AiRoute = () => <Text>Ai</Text>;
 
@@ -21,7 +22,7 @@ export default function App() {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
     { key: 'categories', title: 'Categories', focusedIcon: 'store-search', unfocusedIcon: 'store-search-outline'},
-    { key: 'ai', title: 'chatGPT', focusedIcon: 'robot-excited', unfocusedIcon: 'robot-happy-outline' },
+    { key: 'ai', title: 'AI', focusedIcon: 'robot-excited', unfocusedIcon: 'robot-happy-outline' },
     { key: 'map', title: 'Map', focusedIcon: 'map-search', unfocusedIcon: 'map-search-outline' },
     { key: 'cart', title: 'Cart', focusedIcon: 'cart', unfocusedIcon: 'cart-outline' },
     { key: 'user', title: 'User', focusedIcon: 'account', unfocusedIcon: 'account-outline' },
@@ -29,7 +30,7 @@ export default function App() {
 
   const renderScene = BottomNavigation.SceneMap({
     categories: CategoryStack,
-    ai: AiRoute,
+    ai: AiPage,
     map: MapRoute,
     cart: CartRoute,
     user: UserRoute,
