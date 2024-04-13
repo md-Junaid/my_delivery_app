@@ -20,7 +20,7 @@ const Header = ({ navigation, route, options, back }) => {
       ) : null}
       <Appbar.Content
         title={
-          back ? title : <MaterialCommunityIcons name="storefront" size={40} />
+          back ? title : <MaterialCommunityIcons name="storefront" size={40} color={'purple'} />
         }
       />
     </Appbar.Header>
