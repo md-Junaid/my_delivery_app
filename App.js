@@ -8,10 +8,11 @@ import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper
 import CategoriesScreen from './screens/CategoriesScreen';
 import CategoryStack from './pages/CategoryStack';
 import AiPage from './pages/AiPage';
+import MapPage from './pages/MapPage';
 import UserPage from './pages/UserPage';
+import PromoGallery from './pages/PromoGallery';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from './constants/colors';
-
-const MapRoute = () => <Text>Map</Text>;
 
 const CartRoute = () => <Text>Cart</Text>;
 
@@ -22,7 +23,7 @@ export default function App() {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
     { key: 'categories', title: 'Categories', focusedIcon: 'store-search', unfocusedIcon: 'store-search-outline'},
-    { key: 'ai', title: 'AI', focusedIcon: 'robot-excited', unfocusedIcon: 'robot-happy-outline' },
+    { key: 'pg', title: 'Gallery', focusedIcon: 'view-dashboard', unfocusedIcon: 'view-dashboard-outline' },
     { key: 'map', title: 'Map', focusedIcon: 'map-search', unfocusedIcon: 'map-search-outline' },
     { key: 'cart', title: 'Cart', focusedIcon: 'cart', unfocusedIcon: 'cart-outline' },
     { key: 'user', title: 'User', focusedIcon: 'account', unfocusedIcon: 'account-outline' },
@@ -30,8 +31,8 @@ export default function App() {
 
   const renderScene = BottomNavigation.SceneMap({
     categories: CategoryStack,
-    ai: AiPage,
-    map: MapRoute,
+    pg: PromoGallery,
+    map: MapPage,
     cart: CartRoute,
     user: UserPage,
   });
