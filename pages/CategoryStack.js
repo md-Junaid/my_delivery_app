@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
+import {Row} from 'react-native-paper-grid';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Appbar } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -20,7 +21,7 @@ const Header = ({ navigation, route, options, back }) => {
       ) : null}
       <Appbar.Content
         title={
-          back ? title : <MaterialCommunityIcons name="storefront" size={40} color={'purple'} />
+          back ? title : <Row><MaterialCommunityIcons name="storefront" size={40} color={'purple'} /><Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 5 }}>Profindo</Text></Row>
         }
       />
     </Appbar.Header>

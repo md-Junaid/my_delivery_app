@@ -1,4 +1,4 @@
-import { faAppleWhole, faCarrot, faSoap, faWineBottle } from "@fortawesome/free-solid-svg-icons";
+import { faAppleWhole, faCarrot, faSoap, faWineBottle, faShirt, faComputer } from "@fortawesome/free-solid-svg-icons";
 
 class Category {
   constructor(id, title, icon) {
@@ -9,33 +9,39 @@ class Category {
 }
 
 class Product {
-  constructor(id, categoryIds, title, price, inStock, imageUrl) {
+  constructor(id, categoryIds, title, price, inStock, imageUrl, storeLogo) {
     this.id = id;
     this.categoryIds = categoryIds;
     this.title = title;
     this.price = price;
     this.inStock = inStock;
     this.imageUrl = imageUrl;
+    this.storeLogo = storeLogo
   }
 }
 
 export const CATEGORIES = [
-  new Category('c1', 'Fruits', faAppleWhole),
-  new Category('c2', 'Vegetables', faCarrot),
-  new Category('c3', 'Beverages', faWineBottle),
+  new Category('c1', 'Groceries', faCarrot),
+  new Category('c2', 'Clothing', faShirt),
+  new Category('c3', 'Electronics', faComputer),
   new Category('c4', 'Self Care', faSoap)
 ];
 
 export const PRODUCTS = [
-  new Product('p1', ['c1', 'c2'], 'Avacados /kg', 10.99, 'Not Available', 'https://images.freeimages.com/images/large-previews/224/avocados-1511987.jpg'),
-  new Product('p2', ['c1'], 'Apples /kg', 10.99, 'Few items left', 'https://m.media-amazon.com/images/I/41rxbtVd7jL._AC_.jpg'),
-  new Product('p3', ['c1'], 'Mangos /kg', 10.99, 'Available', 'https://images.freeimages.com/images/large-previews/0cd/mango-1327290.jpg'),
-  new Product('p4', ['c2'], 'Potatos /kg', 10.99, 'Available', 'https://images.freeimages.com/images/large-previews/ee6/patatas-1-1576320.jpg'),
-  new Product('p4', ['c2'], 'Carrots /kg', 10.99, 'Not Available', 'https://images.freeimages.com/images/large-previews/4d3/carrots-1326182.jpg'),
-  new Product('p5', ['c3'], 'Carlsberg', 1.99, 'Available', 'https://s3.eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2015/09/22-1002x708.jpg'),
-  new Product('p6', ['c3'], 'Jack Daniels', 18.99, 'Few items left', 'https://gzhls.at/i/02/90/1290290-l0.jpg'),
-  new Product('p7', ['c4'], 'AXE Chocolate Perfume', 3.99, 'Available','https://nepalgramodhyog.store/images/products/axe%20dark%20temptation%20150ml.jpg'),
-  new Product('p8', ['c4'], 'Nivia Face Wash', 1.99, 'Few items available', 'https://m.media-amazon.com/images/I/61LmABL6JKL.jpg'),
+  new Product('p1', ['c1'], 'Bio Äthiopien - 2 kg Ganze Bohne', 35.96, 'Available', 'https://img.rewe-static.de/8801728/42892161_digital-image.png?impolicy=s-products&imwidth=928&output-format=image/webp', 'https://bakelietkaffee.de/wp-content/uploads/2022/05/Mail_Header-Logo-1-e1530649712669.png'),
+  new Product('p11', ['c1'], 'Kaffee Gourme - 1kg Ganze Bohne', 16.96, 'Available', 'https://www.lebensbaum.com/media/92/36/7a/1692606336/4561_Gourmet_Kaffee_1000g_RGB_948x1066.png', 'https://static.wixstatic.com/media/7daa92_39f87d5506764ccca34e2cff5a0f71d6~mv2.png/v1/fill/w_448,h_162,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7daa92_39f87d5506764ccca34e2cff5a0f71d6~mv2.png'),
+  new Product('p12', ['c1'], 'Premium Bio Kaffeebohnen 1kg', 14.99, 'Few left', 'https://m.media-amazon.com/images/I/51R3uy2ag0L._SX300_SY300_QL70_ML2_.jpg', 'https://jimdo-storage.freetls.fastly.net/image/204597934/529f2805-1aac-49ab-aa4a-3aa6f49f646d.png?quality=80,90&auto=webp&disable=upscale&width=800&height=260&trim=0,0,0,0'),
+  new Product('p13', ['c1'], 'Kaffee, Caffè Crema - 500g ganze Bohne', 7.50, 'Not Available', 'https://media.dm-static.com/images/f_auto,q_auto,c_fit,h_440,w_500/v1708338516/products/pim/4058172684159-2553296/dmbio-kaffee-caffe-crema-ganze-bohne', 'https://coffee-house.cupcino.com/wp-content/uploads/2015/09/Logo_CupCino_sticky.png'),
+  new Product('p2', ['c1'], 'FREIXENET Mia Vino de España', 3.99, 'Few left', 'https://vinyard.com/2528-home_default/freixenet-mia-red-750-ml.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p14', ['c1'], 'DINZLER Bio Espresso Peru 500g', 10.90, 'Few left', 'https://www.dinzler.de/shop/thumbnail/19/72/73/1686806371/100191_SP_1920x1920.jpg', 'https://coffee-house.cupcino.com/wp-content/uploads/2015/09/Logo_CupCino_sticky.png'),
+  new Product('p3', ['c1'], 'Avacados /kg', 10.99, 'Not Available', 'https://images.freeimages.com/images/large-previews/224/avocados-1511987.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p4', ['c1'], 'Apples /kg', 10.99, 'Few left', 'https://m.media-amazon.com/images/I/41rxbtVd7jL._AC_.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p5', ['c1'], 'Mangos /kg', 10.99, 'Available', 'https://images.freeimages.com/images/large-previews/0cd/mango-1327290.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p6', ['c1'], 'Potatos /kg', 10.99, 'Available', 'https://images.freeimages.com/images/large-previews/ee6/patatas-1-1576320.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p7', ['c1'], 'Carrots /kg', 10.99, 'Not Available', 'https://images.freeimages.com/images/large-previews/4d3/carrots-1326182.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p8', ['c1'], 'Carlsberg', 1.99, 'Available', 'https://s3.eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2015/09/22-1002x708.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p9', ['c4'], 'AXE Chocolate Perfume', 3.99, 'Available','https://nepalgramodhyog.store/images/products/axe%20dark%20temptation%20150ml.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
+  new Product('p10', ['c4'], 'Nivia Face Wash', 10.99, 'Few available', 'https://m.media-amazon.com/images/I/61LmABL6JKL.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/2560px-Logo_REWE.svg.png'),
 ];
 
 export const risottoRecipe = `Certainly! Here's a simple recipe for a classic mushroom risotto:

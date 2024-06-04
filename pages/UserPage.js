@@ -29,7 +29,7 @@ const UserPage = () => {
         </View>
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 45 }}>
-        <Card style={{maxWidth: '45%'}}>
+        <Card style={{maxWidth: '45%', backgroundColor: "white"}}>
           <Card.Content style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Text variant="titleLarge" style={{fontWeight: 'bold', fontSize: 18}}>Basic</Text>
             <MaterialCommunityIcons name="brightness-percent" size={48} color="gray" />
@@ -51,7 +51,7 @@ const UserPage = () => {
             />
           </Card.Content>
         </Card>
-        <Card style={{maxWidth: '45%'}}>
+        <Card style={{maxWidth: '45%', backgroundColor: "white"}}>
           <Card.Content style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Text variant="titleLarge" style={{fontWeight: 'bold', fontSize: 18}}>Premium</Text>
             <MaterialCommunityIcons name="brightness-percent" size={48} color="purple" />

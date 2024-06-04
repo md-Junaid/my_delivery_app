@@ -2,12 +2,12 @@ import React from 'react';
 import MapView from 'react-native-maps';
 import {Marker, Callout} from 'react-native-maps';
 import { StyleSheet, View, Text, Image } from 'react-native';
-
+import { Avatar } from 'react-native-paper';
 
 const CustomCallout = ({ marker }) => (
   <Callout>
-    {/* <View style={styles.calloutContainer}> */}
-      {/* <Image source={require('../assets/promoG/65533_Andre_AdobeStock.jpeg')} style={{width:200, height:200}} resizeMode='contain' /> */}
+    {/* <View style={styles.calloutContainer}>
+      <Image source={require('../assets/promoG/65533_Andre_AdobeStock.jpeg')} style={{width:200, height:200}} resizeMode='contain' /> */}
       <View style={styles.calloutTextContainer}>
         <Text style={styles.calloutTitle}>{marker.title}</Text>
         <Text style={styles.calloutDescription}>{marker.description}</Text>

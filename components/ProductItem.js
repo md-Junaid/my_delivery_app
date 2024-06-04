@@ -3,15 +3,18 @@ import PrimaryButton from './PrimaryButton';
 import { MaterialIcons } from "@expo/vector-icons";
 import Colors from '../constants/colors';
 
-function ProductItem({ title, imageUrl, price, inStock }) {
+function ProductItem({ title, imageUrl, price, inStock, storeLogo }) {
   return (
     <View style={styles.productItem}>
       <View style={[styles.innerContainer]}>
         <Image source={{ uri: imageUrl }} style={styles.image} />
         <View style={styles.details}>
           <View style={{height:"50%", overflow: "hidden"}}><Text style={styles.detailTitle}>{title}</Text></View>
-          <Text style={styles.detailInfo}>Price: {price}</Text>
+          <Text style={styles.detailInfo}>Price: <Text style={{fontWeight: 600}}>{price}€</Text></Text>
           <Text style={styles.detailInfo}>Stock: {inStock}</Text>
+          <View style={{height: 60, width: 70, paddingTop: 5}}>
+            <Image source={{ uri: storeLogo }} style={{ height: 30, resizeMode: 'center'}} />
+          </View>
         </View>
         <View style={styles.actions}>
           {/** Two buttons, where one button takes you to more info page and the other adds item to cart */}
@@ -38,7 +41,8 @@ export default ProductItem;
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: '50%',
+    height: '40%',
+    resizeMode: 'cover',
   },
   productItem: {
     flex: 1,
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
   },
   details: {
     paddingHorizontal: 8,
-    height: '35%',
+    height: '36%',
   },
   innerContainer: {
     flex: 1,
