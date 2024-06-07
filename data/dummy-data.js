@@ -1,4 +1,4 @@
-import { faAppleWhole, faCarrot, faSoap, faWineBottle, faShirt, faComputer } from "@fortawesome/free-solid-svg-icons";
+import { faAppleWhole, faCarrot, faSoap, faWineBottle, faShirt, faComputer, faBook, faLeaf, faCouch, faBasketball } from "@fortawesome/free-solid-svg-icons";
 
 class Category {
   constructor(id, title, icon) {
@@ -24,7 +24,11 @@ export const CATEGORIES = [
   new Category('c1', 'Groceries', faCarrot),
   new Category('c2', 'Clothing', faShirt),
   new Category('c3', 'Electronics', faComputer),
-  new Category('c4', 'Self Care', faSoap)
+  new Category('c4', 'Self Care', faSoap),
+  new Category('c5', 'Books', faBook),
+  new Category('c6', 'Furniture', faCouch),
+  new Category('c7', 'Garden', faLeaf),
+  new Category('c8', 'Sports', faBasketball),
 ];
 
 export const PRODUCTS = [

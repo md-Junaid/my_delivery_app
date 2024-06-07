@@ -23,7 +23,7 @@ export default CategoryGridTile;
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 15,
+    margin: 10,
     height: 150,
     borderRadius: 10,
     elevation: 6,

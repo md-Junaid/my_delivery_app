@@ -11,6 +11,7 @@ import AiPage from './pages/AiPage';
 import MapPage from './pages/MapPage';
 import UserPage from './pages/UserPage';
 import PromoGallery from './pages/PromoGallery';
+import LoyaltyPage from './pages/LoyaltyPage';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from './constants/colors';
 
@@ -22,17 +23,18 @@ export default function App() {
   const Stack = createNativeStackNavigator();
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    { key: 'categories', title: 'Categories', focusedIcon: 'store-search', unfocusedIcon: 'store-search-outline'},
-    { key: 'pg', title: 'Gallery', focusedIcon: 'view-dashboard', unfocusedIcon: 'view-dashboard-outline' },
-    { key: 'map', title: 'Map', focusedIcon: 'map-search', unfocusedIcon: 'map-search-outline' },
-    { key: 'cart', title: 'Cart', focusedIcon: 'cart', unfocusedIcon: 'cart-outline' },
-    { key: 'user', title: 'User', focusedIcon: 'account', unfocusedIcon: 'account-outline' },
+    { key: 'categories', title: 'Categories', focusedIcon: 'store-search', unfocusedIcon: 'store-search'},
+    { key: 'pg', title: 'Offers', focusedIcon: 'sale', unfocusedIcon: 'sale' },
+    { key: 'map', title: 'Map', focusedIcon: 'map-search', unfocusedIcon: 'map-search' },
+    { key: 'lp', title: 'Loyalty', focusedIcon: 'heart-box', unfocusedIcon: 'heart-box' },
+    { key: 'user', title: 'User', focusedIcon: 'account', unfocusedIcon: 'account' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
     categories: CategoryStack,
     pg: PromoGallery,
     map: MapPage,
+    lp: LoyaltyPage,
     cart: CartRoute,
     user: UserPage,
   });

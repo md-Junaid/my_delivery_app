@@ -22,10 +22,10 @@ const UserPage = () => {
           </Pressable>
         </View>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-          <Avatar.Image size={164} source={require('../assets/Marten.jpg')} aria-label='MJ'
+          <Avatar.Image size={164} source={{uri: 'https://static.vecteezy.com/system/resources/previews/034/554/733/non_2x/cartoon-boy-with-glasses-and-a-suit-ai-generative-png.png'}} aria-label='MJ'
             style={{ elevation: 18, backgroundColor: 'lightgray' }}
           />
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginTop: 10, color: "#414141" }}>Marten Jacobs</Text>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginTop: 10, color: "#414141" }}>John Doe</Text>
         </View>
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 45 }}>

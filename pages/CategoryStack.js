@@ -21,7 +21,7 @@ const Header = ({ navigation, route, options, back }) => {
       ) : null}
       <Appbar.Content
         title={
-          back ? title : <Row><MaterialCommunityIcons name="storefront" size={40} color={'purple'} /><Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 5 }}>Profindo</Text></Row>
+          back ? title : <Row><MaterialCommunityIcons name="storefront" size={40} color={'purple'} /><Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 5, color: 'purple' }}>Profindo</Text></Row>
         }
       />
     </Appbar.Header>
